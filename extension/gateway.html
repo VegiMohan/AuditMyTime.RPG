@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<style>
+  body { background: #03050a; color: #f38ba8; font-family: 'Consolas', monospace; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; }
+  .gateway-card { background: #090d16; border: 3px double #f38ba8; padding: 40px; width: 500px; box-shadow: 0 0 40px rgba(243, 139, 168, 0.15); text-align: center; }
+  h1 { margin-top: 0; color: #f38ba8; text-transform: uppercase; letter-spacing: 2px; font-size: 1.8rem; }
+  p { color: #cdd6f4; font-size: 0.95rem; line-height: 1.5; }
+  .riddle-box { background: #111424; border: 1px dashed #313244; padding: 15px; text-align: left; margin: 20px 0; color: #a6e3a1; font-size: 0.9rem; }
+  input { width: 100%; background: #03050a; border: 1px solid #f38ba8; color: #a6e3a1; padding: 10px; font-family: 'Consolas', monospace; box-sizing: border-box; margin-bottom: 10px; }
+  button { background: #f38ba8; color: #03050a; border: none; padding: 10px 20px; font-family: 'Consolas', monospace; font-weight: bold; width: 100%; cursor: pointer; text-transform: uppercase; }
+  button:hover { background: #ff758f; }
+</style>
+<title>AuditMyTime.RPG // Gateway Lockdown</title>
+</head>
+<body>
+  <div class="gateway-card">
+    <h1>⚠️ FOCUS MANA DEPLETED</h1>
+    <p>Restricted network path intercepted. Your Focus Mana reserve has hit 0. Solve the challenge below or wait for hardware recovery to restore gateway access.</p>
+    
+    <div class="riddle-box" id="riddle-container">
+      <strong>[CHALLENGE]:</strong> <span id="riddle-text">Loading offline algorithmic challenge...</span>
+    </div>
+
+    <input type="text" id="answer-input" placeholder="Enter solution string...">
+    <button id="btn-submit">Verify Solution & Restore Mana</button>
+  </div>
+
+  <script src="gateway.js"></script>
+</body>
+</html>
