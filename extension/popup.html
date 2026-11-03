@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<style>
+  body { width: 340px; margin: 0; padding: 15px; background: #03050a; color: #a6e3a1; font-family: 'Consolas', monospace; }
+  .header { font-size: 1.1rem; font-weight: bold; color: #00f5ff; border-bottom: 1px dashed #00f5ff; padding-bottom: 8px; margin-bottom: 12px; text-transform: uppercase; letter-spacing: 1px; }
+  .stat-box { background: #090d16; border: 1px solid #1e2238; padding: 10px; margin-bottom: 10px; }
+  .stat-label { font-size: 0.8rem; color: #cdd6f4; text-transform: uppercase; margin-bottom: 4px; display: flex; justify-content: space-between; }
+  .bar-container { background: #111424; height: 10px; border: 1px solid #313244; position: relative; overflow: hidden; }
+  .bar-fill { background: #00f5ff; height: 100%; width: 100%; transition: width 0.3s ease; }
+  .bar-fill.xp { background: #cba6f7; }
+  .chat-box { background: #070a14; border: 1px dashed #313244; height: 130px; overflow-y: auto; padding: 8px; font-size: 0.75rem; color: #a6e3a1; margin-top: 10px; }
+  .btn { background: #00f5ff; color: #03050a; border: none; padding: 8px 12px; font-family: 'Consolas', monospace; font-weight: bold; width: 100%; cursor: pointer; text-transform: uppercase; margin-top: 8px; }
+  .btn:hover { background: #00bfff; }
+</style>
+<title>AuditMyTime.RPG HUD</title>
+</head>
+<body>
+  <div class="header">🛡️ AuditMyTime.RPG // HUD</div>
+  
+  <div class="stat-box">
+    <div class="stat-label"><span>Focus Mana Reserve</span><span id="txt-mana">100/100</span></div>
+    <div class="bar-container"><div class="bar-fill" id="bar-mana" style="width: 100%;"></div></div>
+  </div>
+
+  <div class="stat-box">
+    <div class="stat-label"><span>Experience (XP)</span><span id="txt-xp">0/100 XP</span></div>
+    <div class="bar-container"><div class="bar-fill xp" id="bar-xp" style="width: 0%;"></div></div>
+  </div>
+
+  <div class="stat-box" style="margin-bottom: 0;">
+    <div class="stat-label"><span>AI Coach Channel (`window.ai`)</span><span id="ai-status" style="color: #fab387;">Connecting...</span></div>
+    <div class="chat-box" id="chat-stream">
+      <div>[SYS] Initializing local Gemini Nano runtime...</div>
+    </div>
+    <button class="btn" id="btn-analyze-perf">⚡ Request AI Performance Audit</button>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>
